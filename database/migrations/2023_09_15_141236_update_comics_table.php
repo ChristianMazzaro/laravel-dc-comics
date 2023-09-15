@@ -13,7 +13,7 @@ class UpdateComicsTable extends Migration
     {
         Schema::table('comics', function (Blueprint $table) {
             $table->json('artists')->change(); 
-            $table->json('writers')->change(); 
+            $table->json('writers')->change();
         });
     }
 

@@ -16,6 +16,11 @@ class ComicController extends Controller
         $comics = Comic::all();
         // dd($comics);
 
+        foreach ($comics as $comic) {
+            $comic->artists = json_decode($comic->artists, true);
+            $comic->writers = json_decode($comic->writers, true);
+        }
+
         return view('admin.comics.index',[
             'comics' => $comics
         ]);

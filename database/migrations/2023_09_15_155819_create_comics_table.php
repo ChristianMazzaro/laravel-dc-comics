@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('series',255);
             $table->string('sale_date',20)->nullable();
             $table->string('type',20);
-            $table->string('artists',255);
-            $table->string('writers',255);
+            $table->json('artists'); 
+            $table->json('writers');
             $table->timestamps();
         });
     }
@@ -34,5 +34,3 @@ return new class extends Migration
         Schema::dropIfExists('comics');
     }
 };
-
-

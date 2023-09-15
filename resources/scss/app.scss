@@ -1,1 +1,30 @@
 @import "~bootstrap/scss/bootstrap";
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.card{
+
+    height: calc(800px - 50px);
+
+    img{
+        height: 300px;
+    }
+
+    .card-body{
+        overflow-y: auto;
+
+        div{
+            height: 50px;
+        }
+        .card_description{
+            height: 200px;
+            overflow-y: auto;
+        }
+    }
+
+}
