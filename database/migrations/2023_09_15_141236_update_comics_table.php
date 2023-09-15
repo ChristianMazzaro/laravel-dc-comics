@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class UpdateComicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('comics', function (Blueprint $table) {
-            $table->string('description', 2000)->change();
-            // $table->json('artists',255)->change();
-            // $table->json('writers',255)->change();
+            $table->json('artists')->change(); 
+            $table->json('writers')->change(); 
         });
     }
 
@@ -24,9 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('comics', function (Blueprint $table) {
-            $table->string('description',255);
-            // $table->string('artists',255);
-            // $table->string('writers',255);
+            $table->string('artists', 255)->change(); 
+            $table->string('writers', 255)->change(); 
         });
     }
-};
+}

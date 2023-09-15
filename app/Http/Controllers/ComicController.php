@@ -19,6 +19,8 @@ class ComicController extends Controller
         return view('admin.comics.index',[
             'comics' => $comics
         ]);
+
+        
     }
 
     /**

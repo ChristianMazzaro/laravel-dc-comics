@@ -19,8 +19,6 @@
             @yield('main_content')
         </main>
 
-        @include('partials.main_footer')
-
         @include('partials.body_imports')
     </body>
 </html>
