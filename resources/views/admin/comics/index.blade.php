@@ -23,7 +23,7 @@
                       <p class="card-text my-3">scrittori: {{ implode(', ', $comic->writers) }}</p>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#" class="btn btn-primary my-2">Go somewhere</a>
+                        <a href="/comics/{{$comic->id}}" class="btn btn-primary my-2">Dettagli</a>
                     </div>
                 </div>
             </div>

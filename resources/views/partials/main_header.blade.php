@@ -14,7 +14,7 @@
                 <a class="nav-link" href="/comics">Comics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/comics/1">singlecomicTest</a>
+                <a class="nav-link" href="/comics/create">NewComic</a>
               </li>
             </ul>
           </div>
