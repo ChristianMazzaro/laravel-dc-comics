@@ -41,19 +41,30 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:2000',
+            'thumb' => 'required|url|max:2000',
+            'price' => 'required|numeric|between:0,9999.99',
+            'series'=> 'required|string|max:255',
+            'sale_date' => 'nullable|string|max:20',
+            'type' => 'required|string|max:20',
+            'artists.*' => 'required|string|max:255',
+            'writers.*' => 'required|string|max:255',
+        ]);
+    
         
         
         $comic = new Comic();
-        $comic->title = $data['title'];
-        $comic->description = $data['description'];
-        $comic->thumb = $data['thumb'];
-        $comic->price = $data['price'];
-        $comic->series = $data['series'];
-        $comic->sale_date = $data['sale_date'];
-        $comic->type = $data['type'];
-        $comic->artists = json_encode($data['artists']);
-        $comic->writers = json_encode($data['writers']);
+        $comic->title = $validatedData['title'];
+        $comic->description = $validatedData['description'];
+        $comic->thumb = $validatedData['thumb'];
+        $comic->price = $validatedData['price'];
+        $comic->series = $validatedData['series'];
+        $comic->sale_date = $validatedData['sale_date'];
+        $comic->type = $validatedData['type'];
+        $comic->artists = json_encode($validatedData['artists']);
+        $comic->writers = json_encode($validatedData['writers']);
     
         
         $comic->save();
